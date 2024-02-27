@@ -1,0 +1,5 @@
+@AnilShop.Api_HostAddress = http://localhost:5128
+
+GET {{AnilShop.Api_HostAddress}}/products/
+Accept: application/json
+
