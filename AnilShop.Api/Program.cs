@@ -32,6 +32,7 @@ builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger,
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
+builder.Services.AddMediatRLoggingBehavior();
 
 builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
