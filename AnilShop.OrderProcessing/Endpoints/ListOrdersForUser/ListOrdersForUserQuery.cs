@@ -1,4 +1,5 @@
-﻿using AnilShop.SharedKernel.Abstractions;
+﻿using AnilShop.OrderProcessing.Interfaces;
+using AnilShop.SharedKernel;
 using MediatR;
 
 namespace AnilShop.OrderProcessing.Endpoints.ListOrdersForUser;

@@ -1,3 +1,4 @@
+using AnilShop.Products.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

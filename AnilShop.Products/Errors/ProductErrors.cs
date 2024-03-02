@@ -1,4 +1,4 @@
-using AnilShop.SharedKernel.Abstractions;
+using AnilShop.SharedKernel;
 
 namespace AnilShop.Products.Errors;
 

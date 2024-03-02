@@ -1,5 +1,7 @@
 using System.Reflection;
-using AnilShop.Users.Data;
+using AnilShop.Users.Domain;
+using AnilShop.Users.Infrastructure.Data;
+using AnilShop.Users.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +25,6 @@ public static class UsersModuleExtensions
         
         services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
         services.AddScoped<IReadOnlyUserStreetAddressRepository, UserStreetAddressRepository>();
-
-        services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
         
         mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);
         

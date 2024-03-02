@@ -1,4 +1,4 @@
-using AnilShop.SharedKernel.Abstractions;
+using AnilShop.SharedKernel;
 using AnilShop.Users.CartEndpoints.ListItems;
 using MediatR;
 

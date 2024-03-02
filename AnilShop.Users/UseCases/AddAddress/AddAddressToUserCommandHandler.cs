@@ -1,4 +1,6 @@
-﻿using AnilShop.SharedKernel.Abstractions;
+﻿using AnilShop.SharedKernel;
+using AnilShop.Users.Domain;
+using AnilShop.Users.Interfaces;
 using MediatR;
 using Serilog;
 

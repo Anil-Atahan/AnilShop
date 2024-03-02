@@ -1,4 +1,5 @@
 using System.Reflection;
+using AnilShop.Products.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace AnilShop.Products.Data;

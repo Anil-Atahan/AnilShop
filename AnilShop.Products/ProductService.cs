@@ -1,3 +1,5 @@
+using AnilShop.Products.Domain;
+
 namespace AnilShop.Products;
 
 internal class ProductService : IProductService

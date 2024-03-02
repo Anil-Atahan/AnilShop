@@ -1,6 +1,7 @@
 using System.Reflection;
 using AnilShop.OrderProcessing;
 using AnilShop.Products;
+using AnilShop.SharedKernel;
 using AnilShop.Users;
 using FastEndpoints;
 using FastEndpoints.Security;
@@ -31,6 +32,8 @@ builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger,
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
+
+builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
 var app = builder.Build();
 

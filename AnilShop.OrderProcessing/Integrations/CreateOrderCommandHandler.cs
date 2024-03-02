@@ -1,5 +1,7 @@
 ﻿using AnilShop.OrderProcessing.Contracts;
-using AnilShop.SharedKernel.Abstractions;
+using AnilShop.OrderProcessing.Domain;
+using AnilShop.OrderProcessing.Interfaces;
+using AnilShop.SharedKernel;
 using MediatR;
 using Serilog;
 

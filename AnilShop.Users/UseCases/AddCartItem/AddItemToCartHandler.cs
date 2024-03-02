@@ -1,6 +1,8 @@
 using AnilShop.Products.Contracts;
-using AnilShop.SharedKernel.Abstractions;
+using AnilShop.SharedKernel;
+using AnilShop.Users.Domain;
 using AnilShop.Users.Errors;
+using AnilShop.Users.Interfaces;
 using MediatR;
 
 namespace AnilShop.Users.UseCases.AddCartItem;

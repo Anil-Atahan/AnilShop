@@ -1,3 +1,4 @@
+using AnilShop.Users.Domain;
 using FastEndpoints;
 using Microsoft.AspNetCore.Identity;
 

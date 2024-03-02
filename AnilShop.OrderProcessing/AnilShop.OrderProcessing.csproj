@@ -13,9 +13,6 @@
         <PackageReference Include="StackExchange.Redis" Version="2.7.27" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Data\" />
-    </ItemGroup>
-    <ItemGroup>
       <ProjectReference Include="..\AnilShop.OrderProcessing.Contracts\AnilShop.OrderProcessing.Contracts.csproj" />
       <ProjectReference Include="..\AnilShop.SharedKernel\AnilShop.SharedKernel.csproj" />
       <ProjectReference Include="..\AnilShop.Users.Contracts\AnilShop.Users.Contracts.csproj" />

@@ -1,5 +1,6 @@
-﻿using AnilShop.SharedKernel.Abstractions;
+﻿using AnilShop.SharedKernel;
 using AnilShop.Users.Endpoints.ListAddresses;
+using AnilShop.Users.Interfaces;
 using MediatR;
 
 namespace AnilShop.Users.UseCases.ListAddresses;

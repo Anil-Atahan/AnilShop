@@ -1,4 +1,7 @@
 using System.Reflection;
+using AnilShop.OrderProcessing.Infrastructure;
+using AnilShop.OrderProcessing.Infrastructure.Data;
+using AnilShop.OrderProcessing.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

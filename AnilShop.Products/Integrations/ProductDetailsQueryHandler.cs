@@ -1,6 +1,6 @@
 using AnilShop.Products.Contracts;
 using AnilShop.Products.Errors;
-using AnilShop.SharedKernel.Abstractions;
+using AnilShop.SharedKernel;
 using MediatR;
 
 namespace AnilShop.Products.Integrations;

@@ -1,5 +1,6 @@
-﻿using AnilShop.SharedKernel.Abstractions;
+﻿using AnilShop.SharedKernel;
 using AnilShop.Users.Contracts;
+using AnilShop.Users.Interfaces;
 using MediatR;
 
 namespace AnilShop.Users.Integrations;

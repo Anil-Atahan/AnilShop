@@ -1,4 +1,5 @@
 ﻿using AnilShop.Users.Contracts;
+using AnilShop.Users.Domain;
 using MediatR;
 using Serilog;
 

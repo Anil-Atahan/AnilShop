@@ -21,6 +21,10 @@
       <ProjectReference Include="..\AnilShop.SharedKernel\AnilShop.SharedKernel.csproj" />
       <ProjectReference Include="..\AnilShop.Users.Contracts\AnilShop.Users.Contracts.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Infrastructure\" />
+    </ItemGroup>
     
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
