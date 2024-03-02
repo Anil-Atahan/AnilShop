@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using AnilShop.Users.UseCases;
+using AnilShop.Users.UseCases.AddCartItem;
 using FastEndpoints;
 using MediatR;
 

@@ -1,4 +1,5 @@
 using System.Reflection;
+using AnilShop.OrderProcessing;
 using AnilShop.Products;
 using AnilShop.Users;
 using FastEndpoints;
@@ -24,8 +25,9 @@ builder.Services.AddFastEndpoints()
     .SwaggerDocument();
 
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
-builder.Services.AddProductsService(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddProductModuleService(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnilShop.Users.Data;
 
-public class UsersDbContext : IdentityDbContext
+internal class UsersDbContext : IdentityDbContext
 {
     public UsersDbContext(DbContextOptions<UsersDbContext> options)
         : base(options)

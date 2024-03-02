@@ -9,7 +9,7 @@ namespace AnilShop.Products;
 
 public static class ProductsServiceExtensions
 {
-    public static IServiceCollection AddProductsService(this IServiceCollection services,
+    public static IServiceCollection AddProductModuleService(this IServiceCollection services,
         ConfigurationManager config,
         ILogger logger,
         List<Assembly> mediatRAssemblies)

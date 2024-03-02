@@ -3,9 +3,9 @@ using AnilShop.SharedKernel.Abstractions;
 using AnilShop.Users.Errors;
 using MediatR;
 
-namespace AnilShop.Users.UseCases;
+namespace AnilShop.Users.UseCases.AddCartItem;
 
-public class AddItemToCartHandler : IRequestHandler<AddCartItemCommand, Result>
+internal class AddItemToCartHandler : IRequestHandler<AddCartItemCommand, Result>
 {
     private readonly IApplicationUserRepository _applicationUserRepository;
     private readonly IMediator _mediator;

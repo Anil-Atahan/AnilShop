@@ -1,5 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FastEndpoints" Version="5.22.0.13-beta" />
+        <PackageReference Include="FastEndpoints.Security" Version="5.22.0.13-beta" />
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.1.24081.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-preview.1.24081.2" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.1" />
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Data\" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AnilShop.OrderProcessing.Contracts\AnilShop.OrderProcessing.Contracts.csproj" />
+      <ProjectReference Include="..\AnilShop.SharedKernel\AnilShop.SharedKernel.csproj" />
+    </ItemGroup>
+    
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>

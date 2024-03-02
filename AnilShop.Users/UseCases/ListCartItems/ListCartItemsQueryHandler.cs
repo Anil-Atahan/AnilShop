@@ -3,7 +3,7 @@ using AnilShop.Users.CartEndpoints.ListItems;
 using AnilShop.Users.Errors;
 using MediatR;
 
-namespace AnilShop.Users.UseCases;
+namespace AnilShop.Users.UseCases.ListCartItems;
 
 internal class ListCartItemsQueryHandler : IRequestHandler<ListCartItemsQuery, Result<List<CartItemDto>>>
 {

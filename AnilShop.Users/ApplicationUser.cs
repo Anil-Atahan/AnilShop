@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AnilShop.Users;
 
-public class ApplicationUser : IdentityUser
+internal class ApplicationUser : IdentityUser
 {
     public string FullName { get; set; } = string.Empty;
     private readonly List<CartItem> _cartItems = new();
@@ -21,6 +21,11 @@ public class ApplicationUser : IdentityUser
         }
 
         _cartItems.Add(item);
+    }
+
+    internal void ClearCart()
+    {
+        _cartItems.Clear();
     }
 }
 

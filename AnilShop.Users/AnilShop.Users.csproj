@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AnilShop.OrderProcessing.Contracts\AnilShop.OrderProcessing.Contracts.csproj" />
       <ProjectReference Include="..\AnilShop.Products.Contracts\AnilShop.Products.Contracts.csproj" />
       <ProjectReference Include="..\AnilShop.SharedKernel\AnilShop.SharedKernel.csproj" />
     </ItemGroup>
