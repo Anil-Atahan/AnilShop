@@ -18,6 +18,8 @@ public static class OrderModuleExtensions
             options.UseNpgsql(connectionString));
         
         services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<RedisOrderAddressCache>();
+        services.AddScoped<IOrderAddressCache, ReadThroughOrderAddressCache>();
         
         mediatRAssemblies.Add(typeof(OrderModuleExtensions).Assembly);
         

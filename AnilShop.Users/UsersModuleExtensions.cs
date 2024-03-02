@@ -22,6 +22,9 @@ public static class UsersModuleExtensions
             .AddEntityFrameworkStores<UsersDbContext>();
         
         services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+        services.AddScoped<IReadOnlyUserStreetAddressRepository, UserStreetAddressRepository>();
+
+        services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
         
         mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);
         

@@ -1,8 +1,9 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace AnilShop.Users;
 
-internal class ApplicationUser : IdentityUser
+internal class ApplicationUser : IdentityUser, IHaveDomainEvents
 {
     public string FullName { get; set; } = string.Empty;
     private readonly List<CartItem> _cartItems = new();
@@ -10,6 +11,11 @@ internal class ApplicationUser : IdentityUser
 
     private readonly List<UserStreetAddress> _addresses = new();
     public IReadOnlyCollection<UserStreetAddress> Addresses => _addresses.AsReadOnly();
+
+    private List<DomainEventBase> _domainEvents = new();
+    [NotMapped] public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
+    protected void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);
+    void IHaveDomainEvents.ClearDomainEvents() => _domainEvents.Clear();
 
     internal void AddItemToCart(CartItem item)
     {
@@ -37,6 +43,9 @@ internal class ApplicationUser : IdentityUser
         var newAddress = new UserStreetAddress(Id, address);
         _addresses.Add(newAddress);
 
+        var domainEvent = new AddressAddedEvent(newAddress);
+        RegisterDomainEvent(domainEvent);
+        
         return newAddress;
     }
 
