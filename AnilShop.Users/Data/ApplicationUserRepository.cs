@@ -22,4 +22,11 @@ internal class ApplicationUserRepository : IApplicationUserRepository
     {
         return _usersDbContext.SaveChangesAsync();
     }
+
+    public Task<ApplicationUser> GetUserWithAddressesByEmailAsync(string email)
+    {
+        return _usersDbContext.ApplicationUsers
+            .Include(user => user.Addresses)
+            .SingleAsync(user => user.Email == email);
+    }
 }
