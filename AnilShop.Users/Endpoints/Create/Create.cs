@@ -1,15 +1,17 @@
 using AnilShop.Users.Domain;
+using AnilShop.Users.UseCases.CreateUser;
 using FastEndpoints;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 
 namespace AnilShop.Users.Endpoints.Create;
 
 internal class Create : Endpoint<CreateUserRequest>
 {
-    private readonly UserManager<ApplicationUser> _userManager;
-    public Create(UserManager<ApplicationUser> userManager)
+    private readonly IMediator _mediator;
+    public Create(IMediator mediator)
     {
-        _userManager = userManager;
+        _mediator = mediator;
     }
 
     public override void Configure()
@@ -22,14 +24,17 @@ internal class Create : Endpoint<CreateUserRequest>
         CreateUserRequest req,
         CancellationToken cancellationToken = default)
     {
-        var newUser = new ApplicationUser
+        var command = new CreateUserCommand(req.Email, req.Password);
+
+        var result = await _mediator.Send(command, cancellationToken);
+
+        if (result.IsFailure)
         {
-            Email = req.Email,
-            UserName = req.Email
-        };
-
-        await _userManager.CreateAsync(newUser, req.Password);
-
-        await SendOkAsync();
+            await SendErrorsAsync();
+        }
+        else
+        {
+            await SendOkAsync();
+        }
     }
 }

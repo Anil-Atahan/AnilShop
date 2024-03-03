@@ -25,7 +25,7 @@ internal class AddItem : Endpoint<AddCartItemRequest>
     {
         var emailAddress = User.FindFirstValue("EmailAddress");
 
-        var command = new AddCartItemCommand(req.ProductId, req.Quantity, emailAddress!);
+        var command = new AddItemToCartCommand(req.ProductId, req.Quantity, emailAddress!);
 
         var result = await _mediator.Send(command, cancellationToken);
 

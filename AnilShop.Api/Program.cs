@@ -3,6 +3,7 @@ using AnilShop.OrderProcessing;
 using AnilShop.Products;
 using AnilShop.SharedKernel;
 using AnilShop.Users;
+using AnilShop.Users.UseCases.AddCartItem;
 using FastEndpoints;
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
@@ -33,6 +34,8 @@ builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger,
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
 builder.Services.AddMediatRLoggingBehavior();
+builder.Services.AddMediatRFluentValidationBehavior();
+builder.Services.AddValidatorsFromAssemblyContaining<AddItemToCartCommandValidator>();
 
 builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 

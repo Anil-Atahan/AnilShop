@@ -2,9 +2,9 @@
 
 internal class OrderItem
 {
-    public OrderItem(Guid bookId, int quantity, decimal unitPrice, string description)
+    public OrderItem(Guid productId, int quantity, decimal unitPrice, string description)
     {
-        BookId = bookId;
+        ProductId = productId;
         Quantity = quantity;
         UnitPrice = unitPrice;
         Description = description;
@@ -15,7 +15,7 @@ internal class OrderItem
         
     }
     public Guid Id { get; private set; } = Guid.NewGuid();
-    public Guid BookId { get; private set; }
+    public Guid ProductId { get; private set; }
     public int Quantity { get; private set; }
     public decimal UnitPrice { get; private set; }
     public string Description { get; private set; } = string.Empty;

@@ -7,7 +7,7 @@ using MediatR;
 
 namespace AnilShop.Users.UseCases.AddCartItem;
 
-internal class AddItemToCartHandler : IRequestHandler<AddCartItemCommand, Result>
+internal class AddItemToCartHandler : IRequestHandler<AddItemToCartCommand, Result>
 {
     private readonly IApplicationUserRepository _applicationUserRepository;
     private readonly IMediator _mediator;
@@ -18,7 +18,7 @@ internal class AddItemToCartHandler : IRequestHandler<AddCartItemCommand, Result
         _mediator = mediator;
     }
     
-    public async Task<Result> Handle(AddCartItemCommand request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(AddItemToCartCommand request, CancellationToken cancellationToken)
     {
         var user = await _applicationUserRepository.GetUserWithCartByEmailAsync(request.EmailAddress);
         if (user is null)
