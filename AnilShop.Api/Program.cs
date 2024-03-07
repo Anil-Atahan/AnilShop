@@ -2,6 +2,7 @@ using System.Reflection;
 using AnilShop.EmailSending;
 using AnilShop.OrderProcessing;
 using AnilShop.Products;
+using AnilShop.Reporting;
 using AnilShop.SharedKernel;
 using AnilShop.Users;
 using AnilShop.Users.UseCases.AddCartItem;
@@ -30,6 +31,7 @@ builder.Services.AddFastEndpoints()
 List<Assembly> mediatRAssemblies = [typeof(AnilShop.Api.Program).Assembly];
 builder.Services.AddProductModuleService(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddEmailSendingModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddReportingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
@@ -49,8 +51,6 @@ app.UseFastEndpoints();
 app.UseSwaggerGen();
 
 app.UseHttpsRedirection();
-
-app.UseFastEndpoints();
 
 app.Run();
 

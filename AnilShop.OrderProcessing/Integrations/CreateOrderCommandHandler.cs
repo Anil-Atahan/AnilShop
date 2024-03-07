@@ -25,7 +25,7 @@ internal class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, R
     public async Task<Result<OrderDetailResponse>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
         var items = request.OrderItems.Select(oi => new OrderItem(
-            oi.ProductId, oi.Quantity, oi.UnitPrice, oi.Description));
+            oi.ProductId, oi.Quantity, oi.UnitPrice, oi.Title, oi.Description));
 
         var shippingAddress = await _orderAddressCache.GetByIdAsync(request.ShippingAddressId);
         var billingAddress = await _orderAddressCache.GetByIdAsync(request.BillingAddressId);

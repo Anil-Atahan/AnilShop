@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AnilShop.OrderProcessing.Data.Migrations
+namespace AnilShop.OrderProcessing.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class OrderProcessingInitial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,6 +49,7 @@ namespace AnilShop.OrderProcessing.Data.Migrations
                     ProductId = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false),
                     UnitPrice = table.Column<decimal>(type: "numeric", nullable: false),
+                    Title = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     OrderId = table.Column<Guid>(type: "uuid", nullable: true)
                 },

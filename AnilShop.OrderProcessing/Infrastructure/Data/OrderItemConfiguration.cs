@@ -13,5 +13,9 @@ internal class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
         builder.Property(x => x.Description)
             .HasMaxLength(100)
             .IsRequired();
+        
+        builder.Property(x => x.Title)
+            .HasMaxLength(100)
+            .IsRequired();
     }
 }
