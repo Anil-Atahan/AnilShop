@@ -12,6 +12,19 @@ internal class ApplicationUserRepository : IApplicationUserRepository
     {
         _usersDbContext = usersDbContext;
     }
+    
+    public Task<ApplicationUser> GetUserByIdAsync(Guid userId)
+    {
+        return _usersDbContext.ApplicationUsers
+            .SingleAsync(user => user.Id == userId.ToString());
+    }
+
+    public Task<ApplicationUser> GetUserWithAddressesByEmailAsync(string email)
+    {
+        return _usersDbContext.ApplicationUsers
+            .Include(user => user.Addresses)
+            .SingleAsync(user => user.Email == email);
+    }
 
     public Task<ApplicationUser> GetUserWithCartByEmailAsync(string email)
     {
@@ -23,12 +36,5 @@ internal class ApplicationUserRepository : IApplicationUserRepository
     public Task SaveChangesAsync()
     {
         return _usersDbContext.SaveChangesAsync();
-    }
-
-    public Task<ApplicationUser> GetUserWithAddressesByEmailAsync(string email)
-    {
-        return _usersDbContext.ApplicationUsers
-            .Include(user => user.Addresses)
-            .SingleAsync(user => user.Email == email);
     }
 }
