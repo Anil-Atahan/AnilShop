@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using AnilShop.EmailSending.Data;
+using MongoDB.Driver;
 
 namespace AnilShop.EmailSending.Integrations;
 

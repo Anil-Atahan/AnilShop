@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AnilShop.EmailSending\AnilShop.EmailSending.csproj" />
       <ProjectReference Include="..\AnilShop.OrderProcessing\AnilShop.OrderProcessing.csproj" />
       <ProjectReference Include="..\AnilShop.Products\AnilShop.Products.csproj" />
       <ProjectReference Include="..\AnilShop.Users\AnilShop.Users.csproj" />

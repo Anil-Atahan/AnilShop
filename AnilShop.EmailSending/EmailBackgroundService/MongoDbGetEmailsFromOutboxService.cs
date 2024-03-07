@@ -1,4 +1,5 @@
-﻿using AnilShop.SharedKernel;
+﻿using AnilShop.EmailSending.Data;
+using AnilShop.SharedKernel;
 using MongoDB.Driver;
 
 namespace AnilShop.EmailSending.EmailBackgroundService;

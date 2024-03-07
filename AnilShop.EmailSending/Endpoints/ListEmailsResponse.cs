@@ -1,3 +1,5 @@
+using AnilShop.EmailSending.Data;
+
 namespace AnilShop.EmailSending.Endpoints;
 
 public class ListEmailsResponse

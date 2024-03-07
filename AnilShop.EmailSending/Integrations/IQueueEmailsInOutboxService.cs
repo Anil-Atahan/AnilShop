@@ -1,4 +1,6 @@
-﻿namespace AnilShop.EmailSending.Integrations;
+﻿using AnilShop.EmailSending.Data;
+
+namespace AnilShop.EmailSending.Integrations;
 
 internal interface IQueueEmailsInOutboxService
 {

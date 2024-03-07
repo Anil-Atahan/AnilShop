@@ -1,4 +1,5 @@
-﻿using AnilShop.SharedKernel;
+﻿using AnilShop.EmailSending.Data;
+using AnilShop.SharedKernel;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 

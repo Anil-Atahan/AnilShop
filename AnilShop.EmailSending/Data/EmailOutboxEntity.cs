@@ -1,4 +1,4 @@
-﻿namespace AnilShop.EmailSending;
+﻿namespace AnilShop.EmailSending.Data;
 
 public class EmailOutboxEntity
 {

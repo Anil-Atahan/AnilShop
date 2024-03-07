@@ -1,4 +1,5 @@
 ﻿using AnilShop.EmailSending.Conracts;
+using AnilShop.EmailSending.Data;
 using AnilShop.SharedKernel;
 using MediatR;
 

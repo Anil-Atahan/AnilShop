@@ -1,4 +1,5 @@
 using System.Reflection;
+using AnilShop.EmailSending;
 using AnilShop.OrderProcessing;
 using AnilShop.Products;
 using AnilShop.SharedKernel;
@@ -26,8 +27,9 @@ builder.Services.AddFastEndpoints()
     .AddAuthorization()
     .SwaggerDocument();
 
-List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
+List<Assembly> mediatRAssemblies = [typeof(AnilShop.Api.Program).Assembly];
 builder.Services.AddProductModuleService(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddEmailSendingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
@@ -52,4 +54,7 @@ app.UseFastEndpoints();
 
 app.Run();
 
-public partial class Program { }
+namespace AnilShop.Api
+{
+    public partial class Program { }
+}
